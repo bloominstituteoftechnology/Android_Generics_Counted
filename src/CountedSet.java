@@ -17,9 +17,19 @@ public class CountedSet<T> {
 
     public int count(T item) {
         int numOfItem = 0;
-        for (T element : data) {
-            if (element.equals(item)) {
-                ++numOfItem;
+        if (item == null) {
+            for (T element : data) {
+                if (element == null) {
+                    ++numOfItem;
+                }
+            }
+        } else {
+            for (T element : data) {
+                if (element != null) {
+                    if (element.equals(item)) {
+                        ++numOfItem;
+                    }
+                }
             }
         }
         return numOfItem;
