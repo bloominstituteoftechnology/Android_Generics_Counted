@@ -10,4 +10,8 @@ public class CountedSet<T>{
         this.info = new ArrayList<>();
         this.count = 0;
     }
+
+    public void insert(T element){
+        info.add(element);
+    }
 }
