@@ -16,16 +16,12 @@ public class CountedSet<T> {
     }
 
     public void remove(T item){
-        int occurrences = count(item);
-        while(occurrences != 0){
-            for(int i = data.size() - 1; i >= 0; i--){
-                if(data.get(i).equals(item)){
-                    data.remove(item);
-                    occurrences--;
-                }
+        for(int i = data.size() - 1; i >= 0; i--){
+            if(data.get(i).equals(item)){
+                data.remove(item);
+                break;
             }
         }
-
     }
 
     public int count(T item){
