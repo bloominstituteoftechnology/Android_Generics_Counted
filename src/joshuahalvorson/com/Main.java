@@ -46,6 +46,7 @@ public class Main {
         intSet.remove(11234);
         intSet.remove(11234);
         System.out.println("101 count: " + intSet.count(101));
+        System.out.println("no item count: " + intSet.count(101313));
         System.out.println("11234 count: " + intSet.count(11234));
 
 
