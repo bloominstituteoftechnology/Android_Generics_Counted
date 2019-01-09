@@ -14,4 +14,12 @@ public class CountedSet<T>{
     public void insert(T element){
         info.add(element);
     }
+
+    public void remove(T element){
+        for (int i = 0; i < info.size(); i++) {
+            if (info.get(i) == element){
+                info.remove(element);
+            }
+        }
+    }
 }
