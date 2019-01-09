@@ -16,7 +16,7 @@ public class CountedSet<T>{
     }
 
     public void remove(T element){
-        for (int i = 0; i < info.size(); i++) {
+        for (int i = 0; i < info.size() ; i++) {
             if (info.get(i) == element){
                 info.remove(element);
             }
@@ -24,6 +24,7 @@ public class CountedSet<T>{
     }
 
     public int getCount(T element){
+        count = 0;
         for (T item:info) {
             if (item == element){
                 count++;
