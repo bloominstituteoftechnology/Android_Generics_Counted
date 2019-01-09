@@ -27,8 +27,6 @@ public class CountedSet<T>{
         for (T item:info) {
             if (item == element){
                 count++;
-            }else {
-                count = count + 0;
             }
         }
         return count;
