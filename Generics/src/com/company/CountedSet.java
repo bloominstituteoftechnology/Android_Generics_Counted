@@ -22,4 +22,15 @@ public class CountedSet<T>{
             }
         }
     }
+
+    public int getCount(T element){
+        for (T item:info) {
+            if (item == element){
+                count++;
+            }else {
+                count = count + 0;
+            }
+        }
+        return count;
+    }
 }
