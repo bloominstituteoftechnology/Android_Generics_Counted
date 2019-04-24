@@ -9,5 +9,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        CountedSet<String> set = new CountedSet<>();
+        System.out.println(set.count("test"));
+        set.insert("test");
+        set.insert("test");
+        System.out.println(set.count("test"));
+        set.remove("test");
+        set.remove("test");
+        System.out.println(set.count("test"));
+        set.insert("test2");
+        set.insert("test3");
+        System.out.println(set.count("test"));
+        System.out.println(set.count("test2"));
+        System.out.println(set.count("test3"));
+        System.out.println(set.count("randomname"));
+        set.remove("test");
+        System.out.println(set.count("test"));
+        set.insert("test");
+        set.insert("test");
+        set.insert("test");
+        set.insert("test");
+        set.insert("test");
+        System.out.println(set.count("test"));
+
+
+
     }
 }

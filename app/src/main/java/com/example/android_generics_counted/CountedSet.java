@@ -1,36 +1,32 @@
 package com.example.android_generics_counted;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CountedSet<T> {
- private ArrayList<T> data;
- private int pointer,size;
- private int defaultSize = 10;
+    private ArrayList<T> data;
+    private int pointer;
+    private int defaultSize = 10;
 
  public CountedSet(){
-     data =  new ArrayList<>(defaultSize);
-     this.pointer = 0;
- }
- public CountedSet(int size){
-     // instantiate
-     data =  new ArrayList<>(size);
-
-     this.pointer = 0;
+     data = new ArrayList<>(defaultSize);
+     pointer = 0;
  }
  public void insert(T value){
      // put the value into the array
-
-     data.set(pointer,value);
+     data.add(value);
      increasePointer();
+
+
  }
  public void remove(String value){
      //remove a single occurance of the value in the array
-     for(int i = 0;i <= data.size();i++){
-         if(data.get(i).equals(value)){
+     for(int i = 0;i <= data.size()-1;i++){
+         if(data.get(i).equals(value)) {
              data.remove(i);
+             pointer = i;
              break;
+         }else{
+             System.out.println("none found");
 
          }
      }
@@ -41,6 +37,15 @@ public class CountedSet<T> {
          pointer = 0;
      }
  }
-
+ public int count(String value){
+     int count = 0;
+     if(data.size() != 0){
+     for(int i = 0; i < data.size();i++){
+         if(data.get(i).equals(value)){
+             count = count+1;
+         }
+     }}
+     return count;
+ }
 
 }
