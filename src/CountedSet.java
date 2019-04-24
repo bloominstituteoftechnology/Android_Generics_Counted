@@ -17,22 +17,6 @@ public class CountedSet<K, E> {
         keys = new ArrayList<>();
     }
 
-    /* public void insert(K key, E item) {
-        boolean containsElement = false;
-        for (int i = 0; i < keys.size(); i++) {
-            if (keys.contains(key)) {
-                containsElement = true;
-                keys.set(i, key);
-                data.set(i, item);
-                break;
-            }
-        }
-        if (!containsElement) {
-            data.add(item);
-            keys.add(key);
-        }
-    } */
-
     public void insert(K key, E item) {
         if (keys.contains(key)) {
             keys.set(keys.indexOf(key), key);
@@ -45,14 +29,26 @@ public class CountedSet<K, E> {
 
     public void remove(K key) {
         if (keys.contains(key)) {
-            keys.remove(keys.indexOf(key));
-            data.remove(keys.indexOf(key));
+            int index = keys.indexOf(key);
+            keys.remove(index);
+            data.remove(index);
         }
     }
 
 
-    public void get(K key) {
+    public E get(K key) {
+        if (keys.contains(key))
+            return data.get(keys.indexOf(key));
+        return null;
+    }
 
+    public int count(E value) {
+        int count = 0;
+        for (E element : data) {
+            if (element.equals(value))
+                count++;
+        }
+        return count;
     }
 
 
