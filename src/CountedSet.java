@@ -43,9 +43,16 @@ public class CountedSet<K, E> {
         }
     }
 
+    public void remove(K key) {
+        if (keys.contains(key)) {
+            keys.remove(keys.indexOf(key));
+            data.remove(keys.indexOf(key));
+        }
+    }
+
 
     public void get(K key) {
-        
+
     }
 
 
