@@ -4,12 +4,10 @@ public class CountedSet<K, E> {
 
     private ArrayList<E> data;
     private ArrayList<K> keys;
-    private int length;
 
     public CountedSet(int size) {
         data = new ArrayList<>(size);
         keys = new ArrayList<>(size);
-        length = size;
     }
 
     public CountedSet() {
@@ -49,6 +47,15 @@ public class CountedSet<K, E> {
                 count++;
         }
         return count;
+    }
+
+    public int size() {
+        return keys.size();
+    }
+
+    public void clear() {
+        keys.clear();
+        data.clear();
     }
 
 
