@@ -3,11 +3,9 @@ package com.lambdaschool;
 public class CountedSet<GenericType> {
 
     private GenericType[] elementArray;
-    //private int elementLengthIndex;
 
     public CountedSet() {
         this.elementArray = (GenericType[]) new Object[0];
-        //this.elementLengthIndex = 0;
     }
 
     public void insert(GenericType elementToInsert) {

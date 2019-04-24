@@ -1,7 +1,5 @@
 package com.lambdaschool;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -15,6 +13,21 @@ public class Main {
         set.remove("test");
         System.out.println(set.count("test")); //0
 
-
+        set.remove("My name is Error");
+        set.insert("thyme");
+        set.insert("sage");
+        set.insert("parsley");
+        set.insert("rosemary");
+        set.insert("basil");
+        set.insert("oregano");
+        System.out.println(set.count("oregano")); // 1
+        set.insert("oregano");
+        System.out.println(set.count("oregano")); // 2
+        set.insert("oregano");
+        System.out.println(set.count("oregano")); // 3
+        System.out.println(set.count("parsley")); // 1
+        set.remove("parsley");
+        System.out.println(set.count("parsley")); // 0
+        set.remove("parsley");
     }
 }
