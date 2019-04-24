@@ -4,14 +4,14 @@ public class Tester {
 
         countedSet.insert("test");
         countedSet.insert("test");
-        countedSet.insert("test3");
-        countedSet.insert("test3");
+        countedSet.insert("test");
+        countedSet.insert("test");
         System.out.println(countedSet.count("test"));
         countedSet.remove("test");
         System.out.println(countedSet.count("test"));
-        countedSet.remove("test");
+        countedSet.removeAll("test");
         System.out.println(countedSet.count("test"));
-        System.out.println(countedSet.count("test3"));
+
 
     }
 }

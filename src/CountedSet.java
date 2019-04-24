@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class CountedSet<K> {
     private ArrayList<K> keys;
     private ArrayList<String> amount;
-    private int state;  // 0 to get count, 1 to add, 2 to remove;
+    private int state;  // 0 to get count, 1 to add, 2 to remove, 3 to remove all;
 
     public CountedSet() {
         keys = new ArrayList<>();
@@ -26,6 +26,11 @@ public class CountedSet<K> {
         SearchSet(key);
     }
 
+    public void removeAll(K key){
+        state = 3;
+        SearchSet(key);
+    }
+
     public int SearchSet(K key) {
         int counter = 0;
 
@@ -42,6 +47,10 @@ public class CountedSet<K> {
                         temp = Integer.parseInt(amount.get(i)) - 1;
                         amount.set(i, String.valueOf(temp));
                         return -1;
+                    case 3:
+                        keys.remove(i);
+                        amount.remove(i);
+                        return -1;
                 }
             }
         }
@@ -51,6 +60,4 @@ public class CountedSet<K> {
         }
         return counter;
     }
-
-
 }
