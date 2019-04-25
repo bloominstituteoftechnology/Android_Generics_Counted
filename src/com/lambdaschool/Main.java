@@ -25,6 +25,8 @@ public class Main {
         System.out.println(set.count("oregano")); // 2
         set.insert("oregano");
         System.out.println(set.count("oregano")); // 3
+        set.removeAll("oregano");
+        System.out.println(set.count("oregano")); // 0
         System.out.println(set.count("parsley")); // 1
         set.remove("parsley");
         System.out.println(set.count("parsley")); // 0
