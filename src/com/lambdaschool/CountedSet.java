@@ -28,7 +28,7 @@ public class CountedSet<GenericType> {
     }
 
     private void removeAll(GenericType elementsToRemove, boolean removeOneOccurrence) {
-        int[] indexesOfFoundOccurrences = new int[count(String.valueOf(elementsToRemove))];
+        int[] indexesOfFoundOccurrences = new int[count(elementsToRemove)];
 
         if (indexesOfFoundOccurrences.length > 0 && removeOneOccurrence)
             indexesOfFoundOccurrences = new int[1];
@@ -60,7 +60,7 @@ public class CountedSet<GenericType> {
         this.elementArray = elementArrayCopy;
     }
 
-    public int count(String textToFindAndCountIterationsOf) {
+    public int count(GenericType textToFindAndCountIterationsOf) {
         int count = 0;
 
         for (int i = 0; i < this.elementArray.length; ++i) {
